@@ -26,16 +26,17 @@ export default function Header() {
     zIndex: '100',
   }}
 >
-  <Link className= "button"
+  <Link className= "button active"
     style={{
       color: 'white',
+    
       fontSize: 22,
       fontFamily: 'Inter',
       fontWeight: '400',
       textDecoration: 'none',
     }}
     to="/"
-    activeProps={{ className: 'nav-link is-active' }}
+    activeProps={{ className: 'nav-link is-active', style: { backgroundColor: '#915C27' } }}
   >
     Home
   </Link>
@@ -50,7 +51,7 @@ export default function Header() {
       fontWeight: '400',
       textDecoration: 'none',
     }}
-    activeProps={{ className: 'nav-link is-active' }}
+    activeProps={{ className: 'nav-link is-active', style: { backgroundColor: '#915C27' } }}
   >
     About
   </Link>
@@ -65,7 +66,7 @@ export default function Header() {
       fontWeight: '400',
       textDecoration: 'none',
     }}
-    activeProps={{ className: 'nav-link is-active' }}
+    activeProps={{ className: 'nav-link is-active', style: { backgroundColor: '#915C27' } }}
   >
     Portfolio
   </Link>
@@ -80,7 +81,7 @@ export default function Header() {
       fontWeight: '400',
       textDecoration: 'none',
     }}
-    activeProps={{ className: 'nav-link is-active' }}
+    activeProps={{ className: 'nav-link is-active', style: { backgroundColor: '#915C27' } }}
   >
     Find Me
   </Link>

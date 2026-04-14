@@ -1,3 +1,4 @@
+import Header from '../components/Header'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/portfolio')({
@@ -5,6 +6,10 @@ export const Route = createFileRoute('/portfolio')({
 })
 
 function RouteComponent() {
-  
-  return <div>Hello "/portfolio"!</div>
+  return(
+  < div style={{ minHeight: '100vh', backgroundColor: 'antiquewhite' }} >
+    <Header></Header>
+        
+  </div>
+  )
 }

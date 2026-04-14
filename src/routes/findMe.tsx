@@ -1,3 +1,5 @@
+import Header from '#/components/Header'
+
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/findMe')({
@@ -5,5 +7,11 @@ export const Route = createFileRoute('/findMe')({
 })
 
 function RouteComponent() {
-  return <div>Hello "/findMe"!</div>
+  return (
+  
+  < div style={{ minHeight: '100vh', backgroundColor: 'antiquewhite' }} >
+        <Header></Header>
+        
+  </div>
+)
 }
