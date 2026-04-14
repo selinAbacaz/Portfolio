@@ -9,10 +9,21 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PortfolioRouteImport } from './routes/portfolio'
+import { Route as FindMeRouteImport } from './routes/findMe'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ApiResumeChatRouteImport } from './routes/api.resume-chat'
 
+const PortfolioRoute = PortfolioRouteImport.update({
+  id: '/portfolio',
+  path: '/portfolio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FindMeRoute = FindMeRouteImport.update({
+  id: '/findMe',
+  path: '/findMe',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -23,44 +34,57 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiResumeChatRoute = ApiResumeChatRouteImport.update({
-  id: '/api/resume-chat',
-  path: '/api/resume-chat',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/api/resume-chat': typeof ApiResumeChatRoute
+  '/findMe': typeof FindMeRoute
+  '/portfolio': typeof PortfolioRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/api/resume-chat': typeof ApiResumeChatRoute
+  '/findMe': typeof FindMeRoute
+  '/portfolio': typeof PortfolioRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/api/resume-chat': typeof ApiResumeChatRoute
+  '/findMe': typeof FindMeRoute
+  '/portfolio': typeof PortfolioRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/api/resume-chat'
+  fullPaths: '/' | '/about' | '/findMe' | '/portfolio'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/api/resume-chat'
-  id: '__root__' | '/' | '/about' | '/api/resume-chat'
+  to: '/' | '/about' | '/findMe' | '/portfolio'
+  id: '__root__' | '/' | '/about' | '/findMe' | '/portfolio'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  ApiResumeChatRoute: typeof ApiResumeChatRoute
+  FindMeRoute: typeof FindMeRoute
+  PortfolioRoute: typeof PortfolioRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/portfolio': {
+      id: '/portfolio'
+      path: '/portfolio'
+      fullPath: '/portfolio'
+      preLoaderRoute: typeof PortfolioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/findMe': {
+      id: '/findMe'
+      path: '/findMe'
+      fullPath: '/findMe'
+      preLoaderRoute: typeof FindMeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -75,20 +99,14 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/resume-chat': {
-      id: '/api/resume-chat'
-      path: '/api/resume-chat'
-      fullPath: '/api/resume-chat'
-      preLoaderRoute: typeof ApiResumeChatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  ApiResumeChatRoute: ApiResumeChatRoute,
+  FindMeRoute: FindMeRoute,
+  PortfolioRoute: PortfolioRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
