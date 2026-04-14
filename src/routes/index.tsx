@@ -1,4 +1,5 @@
 
+import Header from '#/components/Header'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({
@@ -8,10 +9,9 @@ export const Route = createFileRoute('/')({
 function App() {
 
   return (
-    < html lang="en" suppressHydrationWarning style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', backgroundColor: 'antiquewhite' }} >
+    < div style={{ minHeight: '100vh', backgroundColor: 'antiquewhite' }} >
+      <Header></Header>
       
-      <body></body>
-      
-    </html>
+    </div>
   )
 }
