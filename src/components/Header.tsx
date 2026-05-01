@@ -4,27 +4,25 @@ import './Header.css'
 export default function Header() {
   return (
   
-     <nav
+  <nav
   style={{
-    backgroundColor: '#5C340D',
-    color: 'AntiqueWhite',
-    padding: '0.5rem 1rem',
-    paddingRight: '60px',
-    borderRadius: '60px',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    margin: '0px auto 0 auto',
-    gap: '30px',
-    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-    minHeight: '8vh',
-    minWidth: '60vw',
-    maxWidth: 'fit-content',
-    position: 'sticky',
-    top: '50px',
-    zIndex: '100',
-  }}
+  position: 'fixed',
+  top: '20px',
+  left: '50%',
+  transform: 'translateX(-50%)',
+  backgroundColor: 'rgba(92, 52, 13, 0.85)',
+  backdropFilter: 'blur(10px)',
+  WebkitBackdropFilter: 'blur(10px)',
+  color: 'AntiqueWhite',
+  padding: '0.5rem 1.5rem',
+  borderRadius: '60px',
+  display: 'flex',
+  justifyContent: 'flex-end',
+  alignItems: 'center',
+  gap: '30px',
+  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)',
+  zIndex: 9999
+}}
 >
   <Link className= "button active"
     style={{
