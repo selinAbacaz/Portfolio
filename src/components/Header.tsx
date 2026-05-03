@@ -1,5 +1,7 @@
 import { Link } from '@tanstack/react-router'
 import './Header.css'
+import example from "../images/resumeWebsite.pdf"
+
 
 export default function Header() {
   return (
@@ -19,11 +21,28 @@ export default function Header() {
   display: 'flex',
   justifyContent: 'flex-end',
   alignItems: 'center',
-  gap: '30px',
+  gap: '25px',
   boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)',
   zIndex: 9999
 }}
 >
+  <a className= "button active"
+    style={{
+      
+    
+      fontSize: 22,
+      fontFamily: 'Inter',
+      fontWeight: '400',
+      textDecoration: 'none',
+      color: "var(--myYellow)"
+      
+    }}
+    href= {example} download= "SelinBacazResume"
+    
+  >
+    Download my Resume
+  </a>
+
   <Link className= "button active"
     style={{
       color: 'white',
@@ -54,20 +73,7 @@ export default function Header() {
     About
   </Link>
 
-  <Link
-  className= "button"
-    to="/portfolio"
-    style={{
-      color: 'white',
-      fontSize: 22,
-      fontFamily: 'Inter',
-      fontWeight: '400',
-      textDecoration: 'none',
-    }}
-    activeProps={{ className: 'nav-link is-active', style: { backgroundColor: '#915C27' } }}
-  >
-    Portfolio
-  </Link>
+  
 
   <Link
   className= "button"

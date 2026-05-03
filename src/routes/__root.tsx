@@ -35,7 +35,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning 
     >
-      <body style={{ margin: 0, padding: 0, left: 0, top: 0}}>
+      <body style={{ margin: 0, top: "0", overflowX: "hidden", minWidth: "100vw"
+      }}>
         
         
         {children}

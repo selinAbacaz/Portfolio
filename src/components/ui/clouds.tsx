@@ -4,20 +4,22 @@ import "./clouds.css"
 const styles: Record<string, React.CSSProperties> = {
   wrapper: {
     position: "absolute",
-    bottom: 0,
+    top: -80,
     left: 0,
     width: "full",
-    height: "800px",
+    height: 'fit-content',
     display: "flex",
     alignItems: "flex-end",
-    zIndex: 0,
+    zIndex: 1,
+    overflowX: "hidden",
+    maxWidth: "100vw"
   },
 
   cloud: {
     width: "200px",
-    height: "800px",
+    height: "750px",
     borderRadius: "180px",
-    marginLeft: "-40px",
+    marginLeft: "-60px",
     transform: "translateY(-120%)",
     animation: "dropIn 0.6s ease forwards",
   },
@@ -36,6 +38,7 @@ export const CloudColumns = () => {
             ...styles.cloud,
             background: `var(${colors[i] ?? '--myDarkGreen'})`,
             animationDelay: `${i * 0.08}s`, 
+            
           }}
         />
       ))}
