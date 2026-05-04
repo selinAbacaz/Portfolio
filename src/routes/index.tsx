@@ -12,13 +12,14 @@ import Curtain from '#/components/ui/Curtain'
 import LogoLoop from '../components/LogoLoop';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
 import '@glidejs/glide/dist/css/glide.core.min.css';
-import Glide from "../../node_modules/@glidejs/glide";
+import Glide from "@glidejs/glide";
+declare module "@glidejs/glide";
 import { useEffect, useRef, useState } from 'react'
 import {slideText, slideTitle} from "../components/ui/slideText"
 import Timeline from "../components/ui/timeline"
 
 
-
+/**reverse this thang */
 
 
 
@@ -35,7 +36,7 @@ function App() {
 
 const glideRef = useRef<Glide | null>(null);
 const [index, setIndex] = useState(0);
-const slides = [0, 1, 2, 3];
+
 
 useEffect(() => {
   const glide = new Glide(".glide", {
