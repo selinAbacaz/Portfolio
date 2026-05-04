@@ -1,14 +1,14 @@
 import Header from '#/components/Header'
 import { createFileRoute, Link } from '@tanstack/react-router'
 import '../styles.css'
-import { CloudColumns } from '#/components/ui/clouds'
+import { CloudColumns } from '../components/ui/clouds'
 import myPicture from '../images/MeField.jpg'
 import Cat from '../images/cat.png'
 import Goldfish from '../images/GoldfishBrain.png'
 import GardenPLot from '../images/GardenPlot.png'
 import CascadeCasa from '../images/CascadeCasa.png'
 import CareerChef from '../images/CareerChef.png'
-import Curtain from '#/components/ui/Curtain'
+import Curtain from '../components/ui/Curtain'
 import LogoLoop from '../components/LogoLoop';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
 import '@glidejs/glide/dist/css/glide.core.min.css';
