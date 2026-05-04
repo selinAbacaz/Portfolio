@@ -12,7 +12,8 @@ import Curtain from '#/components/ui/Curtain'
 import LogoLoop from '../components/LogoLoop';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
 import '@glidejs/glide/dist/css/glide.core.min.css';
-import Glide from "../../node_modules/@glidejs/glide";
+import Glide from "@glidejs/glide";
+declare module "@glidejs/glide";
 import { useEffect, useRef, useState } from 'react'
 import {slideText, slideTitle} from "../components/ui/slideText"
 import Timeline from "../components/ui/timeline"
@@ -35,7 +36,7 @@ function App() {
 
 const glideRef = useRef<Glide | null>(null);
 const [index, setIndex] = useState(0);
-const slides = [0, 1, 2, 3];
+
 
 useEffect(() => {
   const glide = new Glide(".glide", {
@@ -90,14 +91,8 @@ const prev = () => {
   ];
 
 
-const TECH_TAGS: string[] = ["React", "HTML/CSS", "TypeScript", "Node JS"];
 
-const ROLES: { label: string; accent: boolean; italic: boolean }[] = [
-  { label: "UI/UX Designer ", accent: false, italic: false },
-  { label: "Web Developer ", accent: true, italic: false },
-  { label: "Frontend Engineer ", accent: false, italic: false },
-  { label: "Illustrator", accent: false, italic: true },
-];
+
 
 const techLogos = [
   { node: <SiReact />, title: "React", href: "https://react.dev" },
@@ -106,12 +101,6 @@ const techLogos = [
   { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
 ];
 
-// Alternative with image sources
-const imageLogos = [
-  { src: "/logos/company1.png", alt: "Company 1", href: "https://company1.com" },
-  { src: "/logos/company2.png", alt: "Company 2", href: "https://company2.com" },
-  { src: "/logos/company3.png", alt: "Company 3", href: "https://company3.com" },
-];
 
 
 
