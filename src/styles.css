@@ -4,7 +4,7 @@
 @import "@fontsource-variable/inter";
 /* ---break---
 */
-@custom-variant dark (&:is(.dark *));
+
 
 /* Register plugins in tailwind.config.js  ; e.g.:
    // tailwind.config.js
