@@ -19,7 +19,7 @@ const config = defineConfig({
     viteReact(),
     
   ],
-  base: "/Portfolio/"
+  
 })
 
 export default config
