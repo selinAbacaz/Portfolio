@@ -73,7 +73,18 @@ export default function Header() {
     About
   </Link>
 
-  
+  <Link 
+  className= "button"
+  to= "/"
+  href="#FeaturedPortfolio"
+  style={{
+      color: 'white',
+      fontSize: 22,
+      fontFamily: 'Inter',
+      fontWeight: '400',
+      textDecoration: 'none',
+      
+    }}>Projects</Link>
 
   <Link
   className= "button"

@@ -13,12 +13,35 @@
    // };
 */
 
+::-webkit-scrollbar {
+  width: 12px;
+  
+}
+
+/* Track (background) */
+::-webkit-scrollbar-track {
+  
+  border-radius: 10px;
+}
+
+/* Thumb (draggable handle) */
+::-webkit-scrollbar-thumb {
+  background-color: var(--mylightGreen);
+  border-radius: 10px;
+  border: 3px solid var(--myDirtyAntique); /* Creates padding around thumb */
+}
+
+/* Thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--myDarkGreen);
+}
+
 .glide {
   margin: auto;
 }
 
 .glide__slide {
-  background: lightgray;
+  background: var(--myDarkGreen);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -180,7 +203,13 @@ border-radius: 32px;
 
 .aboutMeBackground{
   background-image: linear-gradient(180deg, #EFD578, var(--myDirtyAntique));
-  height: 100vh;
+  height: 90vh;
+  width: 100%;
+
+}
+
+.myTimeline{
+  height: 160vh;
   width: 100%;
 
 }

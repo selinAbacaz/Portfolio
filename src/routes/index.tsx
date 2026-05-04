@@ -14,6 +14,9 @@ import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/s
 import '@glidejs/glide/dist/css/glide.core.min.css';
 import Glide from "../../node_modules/@glidejs/glide";
 import { useEffect, useRef, useState } from 'react'
+import {slideText, slideTitle} from "../components/ui/slideText"
+import Timeline from "../components/ui/timeline"
+
 
 
 
@@ -69,12 +72,6 @@ const prev = () => {
   glideRef.current.go("<");
 };
 
-  const slideText = [
-  "This is Slide 1 content: Goldfish Brain",
-  "This is Slide 2 content: career Chef ",
-  "This is Slide 3 content: Garden Plot",
-  "This is Slide 4 content: Cascade Casa",
-];
 
   const LOVES: string[] = [
   "Cats",
@@ -146,9 +143,9 @@ const imageLogos = [
         <div style={{top: 0, fontSize: "45px", color: "var(--myDarkGreen)", display: "flex", justifyContent: "center" }}> Short Profile</div>
         <hr style={{color: "var(--myBrown)", backgroundColor:"var(--myBrown)", borderColor: "var(--myBrown)", height: "2px", marginBottom: "20px" }}></hr>
 
-        <section className= "small" style={{ display: "flex", width: "100%", height: "50%", justifyContent: "center", flexDirection: "row", gap: "20px"}}>
+        <section className= "small" style={{ display: "flex", width: "100%", height: "60%", justifyContent: "center", flexDirection: "row", gap: "20px"}}>
           <div style={{flexDirection: "column", display: "flex", width: "100%", height: "100%", justifyContent: "flex-start", alignItems: "flex-end"}}>
-            <div className='bg-(--myDarkGreen)/39' style= {{width: "60%", height: "65%", borderRadius: "60px", justifyContent: "center", alignItems: "center", display: "flex", marginRight: "10%"}}>
+            <div className='bg-(--myDarkGreen)/39' style= {{width: "60%", height: "75%", borderRadius: "60px", justifyContent: "center", alignItems: "center", display: "flex", marginRight: "10%"}}>
               <div style={{display: "flex", flexDirection: "row", height: "100%", width: "100%"}}>
                 <div style={{width: "50%", height: "100%"}}>
                   <img src={Cat}></img>
@@ -187,13 +184,13 @@ const imageLogos = [
 
 
           <div style={{flexDirection: "column", display: "flex", width: "100%", height: "100%", justifyContent: "flex-start", verticalAlign: "top"}}>
-            <div className='bg-(--myDarkGreen)/39' style= {{width: "65%", height: "40%", marginRight: "40px", borderRadius: "60px", justifyContent: "center", alignItems: "center", display: "flex"}}>
+            <div className='bg-(--myDarkGreen)/39' style= {{width: "65%", height: "45%", marginRight: "40px", borderRadius: "60px", justifyContent: "center", alignItems: "center", display: "flex"}}>
             
               <div style={{display: "flex", flexDirection: "column", height: "100%", width: "100%", color: "var(--myDirtyAntique)" }}>
                 <div style={{marginTop: "5px", marginRight: "40%", justifyContent:"center", alignItems:"baseline", display: "flex", fontSize: "32px"}}> <b> My Daily Tools: </b> </div>
                 
                 <div style={{display: "flex", height: "100%", width: "100%", justifyContent:"center", alignItems:"center", borderRadius: "45px"}}>
-                  <div className= "bg-(--myDirtyAntique)/40" style={{display: "flex",  height: "80%", width: "90%", justifyContent:"center", alignItems:"center",textAlign: "center", alignContent: "center", borderRadius: "35px", color: "var(--myBrown)", fontSize: "28px", flexWrap:"wrap" }}>
+                  <div className= "bg-(--myDirtyAntique)/40" style={{display: "flex",  height: "85%", width: "90%", justifyContent:"center", alignItems:"center",textAlign: "center", alignContent: "center", borderRadius: "35px", color: "var(--myBrown)", fontSize: "28px", flexWrap:"wrap" }}>
                     React, HTML/ CSS, Typescript, Figma, NodeJS, Tanstack, tailwind
                   
                   </div>
@@ -299,11 +296,16 @@ const imageLogos = [
           <hr style={{color: "var(--myBrown)", backgroundColor:"var(--myBrown)", borderColor: "var(--myBrown)", height: "2px", marginBottom: "20px", width: "80%", margin: "0 auto 20px auto", display: "flex" }}></hr>
             <section className= "small" style={{ display: "flex", width: "94vw", height: "70vh", justifyContent: "center", alignItems: "flex-start", flexDirection: "row", gap: "20px", marginTop: "20px"}}>
               <div style={{flexDirection: "column", display: "flex", width: "80vw", height: "100%", justifyContent: "center", alignItems: "center", }}>
-                <div className='bg-(--myDarkGreen)/40' style={{height:"90%", width: "80%", borderRadius: "60px", display: "flex", justifyContent: "center", alignItems: "center"}}>
-                  {slideText[index]}
+                <div className='bg-(--myDarkGreen)/40' style={{height:"90%", width: "80%", borderRadius: "60px", display: "flex", justifyContent: "flex-start", alignItems: "center", flexDirection: "column"}}>
+                  <div style={{marginTop: "40px", overflowY:"scroll", paddingLeft: "2vw", paddingRight: "2vw", marginRight: "1vw", marginBottom: "2vw"}}>
+                    
+                    <div style={{display: "flex", justifyContent: "center", alignItems: "center", textAlign:"center", fontSize: "28px", color: "var(--myDirtyAntique)", marginBottom: "10px"}}><b>{slideTitle[index]}</b></div>
+                  
+                    <div style={{display: "flex", justifyContent: "flex-start", alignItems: "flex-start", fontSize: "20px", color: "var(--myBrown)", textAlign:"justify", whiteSpace: "pre-line"}} > {slideText[index]} </div></div>
+                    
 
 
-                </div>
+                  </div>
 
               </div>
               <div
@@ -338,7 +340,7 @@ const imageLogos = [
                       <button className="glide__arrow" onClick={prev} style={{ fontSize: 40 }}>&lt;</button>
 
                         <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                            {slides.map((_, i) => (
+                            {slideText.map((_, i) => (
                               <div
                                 key={i}
                                 onClick={() => glideRef.current?.go(`=${i}`)}
@@ -363,8 +365,30 @@ const imageLogos = [
               </div>
 
             </section>
+            <Link
+              to="/about"
+              style={{
+                color: 'var(--myBrown)',
+                fontSize: 22,
+                fontFamily: 'Inter',
+                fontWeight: '400',
+                textDecoration: 'none',
+                alignSelf: "flex-end", 
+                marginRight: "10%",
+                marginTop: "10px"
+              }}
+            >
+              <u>Go to 'Projects' for more...</u>
+            </Link>
 
-
+        </section>
+        <section id="timeline" className="myTimeline" style= {{flexDirection: "column"}}>
+          <div id="FeaturedPortfolio" style={{top: 0, fontSize: "45px", color: "var(--myDarkGreen)", display: "flex", justifyContent: "center",marginTop: "30px", alignItems: "center" }}> My Timeline</div>
+          <hr style={{color: "var(--myBrown)", backgroundColor:"var(--myBrown)", borderColor: "var(--myBrown)", height: "2px", marginBottom: "20px", width: "80%", margin: "0 auto 20px auto", display: "flex" }}></hr>
+            <section className= "small" style={{ display: "flex", width: "94vw", height: "70vh", justifyContent: "center", alignItems: "flex-start", flexDirection: "row", gap: "20px", marginTop: "20px"}}>
+              
+              <Timeline></Timeline>
+            </section>
         </section>
 
     </div>
